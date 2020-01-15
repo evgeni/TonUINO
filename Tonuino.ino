@@ -173,6 +173,8 @@ MFRC522::StatusCode status;
 #define buttonNext A4
 #define busyPin 4
 
+#define baseVolume 8
+
 #define LONG_PRESS 1000
 
 Button pauseButton(buttonPause);
@@ -212,7 +214,8 @@ void setup() {
 
   // DFPlayer Mini initialisieren
   mp3.begin();
-  mp3.setVolume(15);
+  delay(1000);
+  mp3.setVolume(baseVolume);
 
   // NFC Leser initialisieren
   SPI.begin();        // Init SPI bus
